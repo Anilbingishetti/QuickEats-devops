@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="QuickEats - Partner Restaurants" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickEats | Restaurants</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    section {
+      display: grid;
+    }
+
+    .btn {
+      background-color: #e63946;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 8px;
+    }
+
+    .btn:hover {
+      background-color: #d62828;
+    }
+
+    fieldset {
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+      padding: 15px;
+    }
+
+    legend {
+      color: #e63946;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <img src="assets/logo.png" alt="QuickEats Logo" width="56" height="56" />
+  <h1>QuickEats</h1>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="restaurants.html">Restaurants</a> |
+    <a href="menu.html">Menu</a> |
+    <a href="offers.html">Offers</a> |
+    <a href="delivery.html">Delivery</a> |
+    <a href="careers.html">Careers</a> |
+    <a href="team.html">Team</a> |
+    <a href="contact.html">Contact</a>
+  </nav>
+  <hr />
+</header>
+
+<main>
+  <section>
+    <h2>Partner With QuickEats</h2>
+    <img src="assets/restaurant_partner.jpg" alt="Restaurant Partnership Process">
+    <p>Join the QuickEats network and grow your business! Register your restaurant and reach thousands of hungry customers every day.</p>
+  </section>
+
+  <section>
+    <h2>Restaurant Registration Form</h2>
+    <form action="submit_restaurant.html" method="post">
+      
+      <!-- Restaurant Details -->
+      <fieldset>
+        <legend>Restaurant Details</legend>
+
+        <label for="restaurant-name">Restaurant Name:</label><br>
+        <input type="text" id="restaurant-name" name="restaurant-name" required><br><br>
+
+        <label for="owner-name">Owner/Manager Name:</label><br>
+        <input type="text" id="owner-name" name="owner-name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone" required><br><br>
+      </fieldset>
+
+      <!-- Restaurant Preferences -->
+      <fieldset>
+        <legend>Restaurant Preferences</legend>
+
+        <label for="cuisine">Cuisine Type:</label><br>
+        <select id="cuisine" name="cuisine" required>
+            <option value="indian">Indian</option>
+            <option value="chinese">Chinese</option>
+            <option value="italian">Italian</option>
+            <option value="bakery">Bakery</option>
+            <option value="continental">Continental</option>
+        </select><br><br>
+
+        <label for="open-hours">Opening Hours:</label><br>
+        <input list="hours" id="open-hours" name="open-hours" required>
+        <datalist id="hours">
+            <option value="9 AM - 9 PM">
+            <option value="10 AM - 10 PM">
+            <option value="24 Hours">
+        </datalist><br><br>
+      </fieldset>
+
+      <!-- Additional Info -->
+      <fieldset>
+        <legend>Additional Info</legend>
+
+        <label for="tables">Total Seating Capacity:</label><br>
+        <input type="number" id="tables" name="tables" min="5" max="500" required><br><br>
+
+        <label for="delivery">Home Delivery Available:</label>
+        <input type="checkbox" id="delivery" name="delivery"><br><br>
+
+        <label for="license">Upload FSSAI License:</label><br>
+        <input type="file" id="license" name="license" accept=".pdf,.jpg,.png" required><br><br>
+      </fieldset>
+
+      <input class="btn" type="submit" value="Submit Registration">
+      <input class="btn" type="reset" value="Reset Form">
+
+    </form>
+  </section>
+
+  <section>
+    <h2>Onboarding Progress</h2>
+
+    <label for="onboarding-progress">Verification Progress:</label><br>
+    <progress id="onboarding-progress" value="45" max="100">45%</progress><br><br>
+
+    <label for="partner-growth">Partner Network Growth:</label><br>
+    <meter id="partner-growth" value="70" min="0" max="100">70%</meter>
+  </section>
+</main>
+
+<footer>
+  <hr />
+  <address>QuickEats HQ, Food Lane, Hyderabad, India • +91-40-9876-5432</address>
+  <p>&copy; 2025 QuickEats. All rights reserved.</p>
+</footer>
+</body>
+</html>

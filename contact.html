@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="ABC Restaurant - Contact" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ABC Restaurant | Contact</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    section {
+      display: grid;
+      margin-bottom: 2rem;
+    }
+
+    form {
+      display: grid;
+      width: 300px;
+      gap: 0.8rem;
+    }
+
+    .btn {
+      background-color: #b5651d;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #8a4210;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <img src="assets/logo.png" alt="ABC Restaurant Logo" width="56" height="56" />
+  <h1>ABC Restaurant</h1>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="menu.html">Menu</a> |
+    <a href="about.html">About</a> |
+    <a href="gallery.html">Gallery</a> |
+    <a href="reservations.html">Reservations</a> |
+    <a href="events.html">Events</a> |
+    <a href="careers.html">Careers</a> |
+    <a href="contact.html">Contact</a>
+  </nav>
+  <hr />
+</header>
+
+<main>
+  <section>
+    <h2>Contact Us</h2>
+    <!-- Banner -->
+    <img src="assets/contact_banner.jpg" alt="Restaurant Contact Banner">
+    <p>We’d love to hear from you — whether you want to book an event, give feedback, or just say hello!</p>
+  </section>
+
+  <section>
+    <h2>Send a Message</h2>
+    <form action="send_message.html" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" name="subject" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <label for="purpose">Purpose:</label>
+      <select id="purpose" name="purpose" required>
+        <option value="General">General</option>
+        <option value="Feedback">Feedback</option>
+        <option value="Reservations">Reservations</option>
+        <option value="Events">Events</option>
+      </select>
+
+      <button type="submit" class="btn" style="width:120px;">Submit</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Find Us</h2>
+    <!-- Map section -->
+    <img src="assets/restaurant_map.jpg" alt="Restaurant Location Map">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.16032787893!2d78.48667151530563!3d17.385044507901105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb977c0e2c5f15%3A0xdebde1e7c7b3a8f1!2sHyderabad!5e0!3m2!1sen!2sin!4v1694744400000"
+      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
+
+  <section>
+    <h2>Other Contacts</h2>
+    <ul>
+      <li><a href="mailto:reservations@abcrestaurant.com">reservations@abcrestaurant.com</a></li>
+      <li><a href="mailto:events@abcrestaurant.com">events@abcrestaurant.com</a></li>
+      <li><a href="mailto:support@abcrestaurant.com">support@abcrestaurant.com</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <hr />
+  <address>ABC Restaurant, Foodie Street, Hyderabad, India • +91-40-9876-5432</address>
+  <p>&copy; 2025 ABC Restaurant. All rights reserved.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="ABC Restaurant - Careers" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ABC Restaurant | Careers</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .jobs {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid #b5651d;
+      filter: grayscale(100%);
+      transition: filter 0.4s ease, transform 0.3s ease;
+      margin-bottom: 2rem;
+    }
+    .jobs:hover {
+      filter: grayscale(0%);
+      transform: scale(1.03); 
+    }
+  </style>
+</head>
+<body>
+<header>
+  <img src="assets/logo.png" alt="ABC Restaurant Logo" width="56" height="56" />
+  <h1>ABC Restaurant</h1>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="menu.html">Menu</a> |
+    <a href="about.html">About</a> |
+    <a href="gallery.html">Gallery</a> |
+    <a href="reservations.html">Reservations</a> |
+    <a href="events.html">Events</a> |
+    <a href="careers.html">Careers</a> |
+    <a href="contact.html">Contact</a>
+  </nav>
+  <hr />
+</header>
+
+<main>
+  <section>
+    <h2>Join Our Team</h2>
+    <ul>
+      <!-- Job positions -->
+      <li>Head Chef</li>
+      <li>Pastry Chef</li>
+      <li>Waiter / Waitress</li>
+      <li>Restaurant Manager</li>
+      <li>Bartender</li>
+      <li>Dishwasher</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="container">Our Work Culture</h2>
+    <!-- Image gallery for work environment -->
+    <img class="jobs" src="assets/work_chef.jpg" alt="Chef at work">
+    <img class="jobs" src="assets/work_team.jpg" alt="Team collaboration">
+    <img class="jobs" src="assets/work_kitchen.jpg" alt="Kitchen setup">
+    <img class="jobs" src="assets/work_service.jpg" alt="Restaurant service">
+    <img class="jobs" src="assets/work_bar.jpg" alt="Bar area">
+    <img class="jobs" src="assets/work_customer.jpg" alt="Serving customers">
+  </section>
+
+  <section>
+    <h2>Employee Benefits</h2>
+    <dl>
+      <dt>Training & Development</dt>
+      <dd>Regular skill development workshops and culinary training.</dd>
+
+      <dt>Employee Meals</dt>
+      <dd>Complimentary meals during shifts for all staff members.</dd>
+
+      <dt>Flexible Schedule</dt>
+      <dd>Adjustable work hours for a balanced work-life environment.</dd>
+    </dl>
+  </section>
+</main>
+
+<footer>
+  <hr />
+  <address>ABC Restaurant, Foodie Street, Hyderabad, India • +91-40-9876-5432</address>
+  <p>&copy; 2025 ABC Restaurant. All rights reserved.</p>
+</footer>
+</body>
+</html>

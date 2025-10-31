@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="QuickEats - Team" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickEats | Team</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .team-member {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .team-member:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .team-member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .team-member h3 {
+      color: #e63946;
+      margin-bottom: 5px;
+    }
+
+    .team-member p {
+      font-size: 0.95rem;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <img src="assets/logo.png" alt="QuickEats Logo" width="56" height="56" />
+  <h1>QuickEats</h1>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="restaurants.html">Restaurants</a> |
+    <a href="menu.html">Menu</a> |
+    <a href="offers.html">Offers</a> |
+    <a href="delivery.html">Delivery</a> |
+    <a href="careers.html">Careers</a> |
+    <a href="team.html">Team</a> |
+    <a href="contact.html">Contact</a>
+  </nav>
+  <hr />
+</header>
+
+<main>
+  <section>
+    <h2>Meet Our Team</h2>
+    <p>At QuickEats, our people are our biggest strength. Meet the passionate minds who make your favorite meals reach your doorstep with speed and love.</p>
+
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="assets/team_ceo.jpg" alt="CEO - Arjun Rao">
+        <h3>Arjun Rao</h3>
+        <p><strong>Founder & CEO</strong></p>
+        <p>Visionary entrepreneur leading QuickEats towards innovation and customer delight. Arjun believes in redefining food delivery through technology and empathy.</p>
+      </div>
+
+      <div class="team-member">
+        <img src="assets/team_ops.jpg" alt="Operations Head - Priya Sharma">
+        <h3>Priya Sharma</h3>
+        <p><strong>Head of Operations</strong></p>
+        <p>Ensures every order is delivered on time with precision and care. Priya manages logistics and maintains service excellence nationwide.</p>
+      </div>
+
+      <div class="team-member">
+        <img src="assets/team_marketing.jpg" alt="Marketing Lead - Rahul Verma">
+        <h3>Rahul Verma</h3>
+        <p><strong>Marketing Lead</strong></p>
+        <p>Creative strategist behind QuickEats’ brand campaigns and customer engagement. Rahul connects food lovers with flavors they adore.</p>
+      </div>
+
+      <div class="team-member">
+        <img src="assets/team_tech.jpg" alt="CTO - Sneha Iyer">
+        <h3>Sneha Iyer</h3>
+        <p><strong>Chief Technology Officer</strong></p>
+        <p>Heads the engineering team that powers the QuickEats platform, ensuring smooth app performance and secure digital experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Our Culture</h2>
+    <p>
+      At QuickEats, we believe that teamwork, innovation, and customer obsession are the key ingredients of success.
+      Our diverse and dynamic team works together to make dining easier, faster, and more enjoyable for everyone.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <hr />
+  <address>QuickEats HQ, Food Lane, Hyderabad, India • +91-40-9876-5432</address>
+  <p>&copy; 2025 QuickEats. All rights reserved.</p>
+</footer>
+</body>
+</html>

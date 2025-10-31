@@ -1,0 +1,22 @@
+node { // Defines where the pipeline will run, similar to 'agent any'
+    stage('Checkout Code') {
+        echo 'Starting Scripted Pipeline...'
+        // The step is the same as in Declarative
+        checkout scm 
+    }
+
+    stage('Validate Content') {
+        // Scripted allows direct Groovy conditionals (if/else) without a 'script' block
+        if (fileExists('index.html')) {
+            echo 'Index.html found. Proceeding with deployment checks.'
+        } else {
+            error 'FATAL: index.html is missing!'
+        }
+    }
+    
+    stage('Archive Files') {
+        // Steps are called directly, not wrapped in steps {}
+        archiveArtifacts artifacts: '**/*.html, **/*.css', fingerprint: true
+    }
+}
+// Note: Cleanup (cleanWs) would go outside the 'node' block or in a 'try/finally' block here.
