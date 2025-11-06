@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "anilbingishetti/QuickBites"
-        ECR_REPO   = "387056640483.dkr.ecr.ap-south-1.amazonaws.com/QuickBites"
+        IMAGE_NAME = "anilbingishetti/quickbites"
+        ECR_REPO   = "387056640483.dkr.ecr.ap-south-1.amazonaws.com/quickbites"
         REGION     = "ap-south-1"
         AWS_CLI    = "C:\\Program Files\\Amazon\\AWSCLIV2\\aws.exe"
         TERRAFORM  = "C:\\terraform_1.13.3_windows_386\\terraform.exe"
