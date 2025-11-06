@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = "vjagvi/college-website"
-        ECR_REPO   = "387056640483.dkr.ecr.us-east-1.amazonaws.com/college-website"
+        ECR_REPO   = "387056640483.dkr.ecr.ap-south-1.amazonaws.com/college-website"
         REGION     = "us-east-1"
         AWS_CLI    = "C:\\Program Files\\Amazon\\AWSCLIV2\\aws.exe"
         TERRAFORM  = "C:\\terraform_1.13.3_windows_386\\terraform.exe"
@@ -13,7 +13,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 echo '📦 Cloning repository...'
-                git branch: 'main', url: 'https://github.com/vJagvi/CollegeWebsite.git'
+                git branch: 'main', url: 'https://github.com/Anilbingishetti/QuickEats-devops.git'
             }
         }
 
@@ -27,7 +27,7 @@ pipeline {
         stage('Push to AWS ECR') {
             steps {
                 echo '🚀 Pushing image to AWS ECR...'
-                withCredentials([usernamePassword(credentialsId: 'aws-ecr-creds', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+                withCredentials([usernamePassword(credentialsId: 'aws-creds', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                     bat """
                     set AWS_ACCESS_KEY_ID=%AWS_ACCESS_KEY_ID%
                     set AWS_SECRET_ACCESS_KEY=%AWS_SECRET_ACCESS_KEY%
