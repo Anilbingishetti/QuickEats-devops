@@ -64,7 +64,7 @@ resource "aws_security_group" "web_sg" {
   }
 
   tags = {
-    Name = "jenkins-ec2-sg"
+    Name = var.security_group_name
   }
 }
 
@@ -95,39 +95,38 @@ resource "aws_instance" "web" {
   instance_type           = var.instance_type
   key_name                = var.key_name
   iam_instance_profile    = aws_iam_instance_profile.ec2_profile.name
-  security_groups         = [aws_security_group.web_sg.name]
+  vpc_security_group_ids  = [aws_security_group.web_sg.id]
 
   user_data = <<-EOF
               #!/bin/bash
-              # Update and install Docker
               yum update -y
-              amazon-linux-extras install docker -y
 
-              # Enable Docker on boot
+              # Install AWS CLI
+              yum install -y unzip
+              curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+              unzip awscliv2.zip
+              ./aws/install
+
+              # Install Docker
+              amazon-linux-extras install docker -y
               systemctl enable docker
               systemctl start docker
-
-              # Add ec2-user to Docker group
-              usermod -a -G docker ec2-user
-
-              # Wait for Docker to start
+              usermod -aG docker ec2-user
               sleep 10
 
-              # ECR login, pull image, and run container
               REGION=${var.region}
               REPO=${var.ecr_repo_url}
+              TAG=${var.image_tag}
 
+              # Login to ECR + Pull Image
               aws ecr get-login-password --region $REGION | docker login --username AWS --password-stdin $REPO
-              docker pull $REPO
+              docker pull $REPO:$TAG
 
-              # Stop existing container if any
-              if [ $(docker ps -q -f name=college-website) ]; then
-                docker stop college-website
-                docker rm college-website
-              fi
+              # Restart container if exists
+              docker rm -f college-website || true
 
               # Run container
-              docker run -d --name college-website -p 80:80 $REPO
+              docker run -d --name college-website -p 80:80 $REPO:$TAG
               EOF
 
   tags = {

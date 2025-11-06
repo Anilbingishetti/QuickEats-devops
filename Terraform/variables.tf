@@ -1,24 +1,24 @@
 variable "region" {
-  description = "AWS region to deploy resources"
-  default     = "ap-south-1"
+  default = "ap-south-1"
 }
 
 variable "instance_type" {
-  description = "EC2 instance type"
-  default     = "t3.micro"
+  default = "t3.micro"
 }
 
 variable "key_name" {
-  description = "Existing EC2 key pair name"
-  default     = "my-keypair"
+  default = "my-keypair"
 }
 
 variable "ecr_repo_url" {
-  description = "ECR repository URL of the Docker image"
-  default     = "387056640483.dkr.ecr.us-east-1.amazonaws.com/QuickEats-website:latest"
+  description = "ECR repository URL (no tag)"
+  default     = "387056640483.dkr.ecr.ap-south-1.amazonaws.com/QuickEats-website"
+}
+
+variable "image_tag" {
+  default = "latest"
 }
 
 variable "security_group_name" {
-  description = "Security group name for EC2 instance"
-  default     = "jenkins-ec2-sg"
+  default = "jenkins-ec2-sg"
 }

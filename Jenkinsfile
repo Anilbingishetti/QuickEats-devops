@@ -25,19 +25,21 @@ pipeline {
         }
 
         stage('Push to AWS ECR') {
-            steps {
-                echo '🚀 Pushing image to AWS ECR...'
-                withCredentials([usernamePassword(credentialsId: 'aws_jenkins', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY')]) {
-                    bat """
-                    set AWS_ACCESS_KEY_ID=%AWS_ACCESS_KEY_ID%
-                    set AWS_SECRET_ACCESS_KEY=%AWS_SECRET_ACCESS_KEY%
-                    "%AWS_CLI%" ecr get-login-password --region %REGION% | docker login --username AWS --password-stdin %ECR_REPO%
-                    docker tag %IMAGE_NAME%:latest %ECR_REPO%:latest
-                    docker push %ECR_REPO%:latest
-                    """
-                }
-            }
-        }
+         steps {
+            echo '🚀 Pushing image to AWS ECR...'
+            withCredentials([usernamePassword(credentialsId: 'aws_jenkins', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+            bat """
+            set AWS_ACCESS_KEY_ID=%AWS_ACCESS_KEY_ID%
+            set AWS_SECRET_ACCESS_KEY=%AWS_SECRET_ACCESS_KEY%
+            "%AWS_CLI%" ecr get-login-password --region %REGION% | docker login --username AWS --password-stdin %ECR_REPO%
+
+            docker tag %IMAGE_NAME%:latest %ECR_REPO%:latest
+            docker push %ECR_REPO%:latest
+            """
+         }
+    }
+    }
+
 
         stage('Deploy with Terraform') {
             steps {
