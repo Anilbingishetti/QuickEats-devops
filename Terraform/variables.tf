@@ -7,7 +7,7 @@ variable "instance_type" {
 }
 
 variable "key_name" {
-  default = "my-keypair"
+  default = "jenkins-key"
 }
 
 variable "ecr_repo_url" {
